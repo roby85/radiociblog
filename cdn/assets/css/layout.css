@@ -1594,3 +1594,40 @@ div.rightbox {
 .rightbox .fourthrow > * {
     verical-align: baseline;
 }
+.arrow_box {
+	position: absolute;
+	left:90%;
+	width: 0px;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 50px;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: rgb(204, 198, 174);
+	border-width: 20px;
+	left: 50%;
+	margin-left: -20px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: gray;
+	border-width: 21px;
+	left: 50%;
+	margin-left: -21px;
+
+}
+#info{
+	left: 90%;
+	position: absolute;
+	margin-left: 2px;
+	margin-top: 2px;color:red;
+	cursor:pointer;
+}

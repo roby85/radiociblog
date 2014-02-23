@@ -131,6 +131,11 @@ def down(request):
     return render(request, 'blog/download.html',
                   {'schedule': schedule(),
                    'today_schedule': today_schedule()})
+                   
+def contatti(request):
+    return render(request, 'blog/contatti.html',
+                  {'schedule': schedule(),
+                   'today_schedule': today_schedule()})
 
 
 def standalone(request):

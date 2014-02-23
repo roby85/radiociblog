@@ -11,6 +11,7 @@
     	<li><a href="http://www.radiocicletta.it/chisiamo" class="faq">Chi siamo</a></li>
     	<li><a href="http://www.radiocicletta.it/download" class="downloads">Download</a></li>
     	<li><a href="http://www.radiocicletta.it/aiutaci" class="help">Aiutaci</a></li>
+    	<li><a href="http://www.radiocicletta.it/contatti" class="contatti">Contatti</a></li>
     </ul>
 </nav>
 <div id="playercontainer">
@@ -20,13 +21,69 @@
                     Ascolta radiocicletta da questo link usando il tuo player (VLC, Winamp, Mplayer, iTunes...)</a></div></noscript>
     </div>
 </div>
+<style type="text/css">
+.arrow_box {
+	position: absolute;
+	left:90%;
+	width: 0px;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 50px;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: rgb(204, 198, 174);
+	border-width: 20px;
+	left: 50%;
+	margin-left: -20px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: gray;
+	border-width: 21px;
+	left: 50%;
+	margin-left: -21px;
+
+}
+#info{
+	left: 90%;
+	position: absolute;
+	margin-left: 2px;
+	margin-top: 2px;
+	color:red;
+	cursor:pointer;
+}
+</style>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+$(document).ready(function(){
+    var refreshId = setInterval(function(){
+    
+        $('#showcasecontainer').slideUp("slow");
+    }, 15000);
+
+	$('#info').click(function(){
+		   $('#showcasecontainer').slideDown("slow");
+	});
+});
+</script>
 <noscript>
     <div>
         Per poter usare tutte le funzionalità del sito devi abilitare Javascript sul tuo browser.
     </div>
 </noscript>
-
 {% block showcase %}{% endblock %}
+<div class="arrow_box"></div>
+<div id="info">ON AIR</div> 
+
 <div id="body">
     {% block layoutcontent %}
     {% endblock %}
@@ -41,6 +98,7 @@
             	<li><a href="/blogs">Blogs</a></li>
             	<li><a href="/chisiamo">Chi siamo</a></li>
                 <li><a href="/aiutaci">Aiutaci</a></li>
+                <li><a href="/contatti">Contatti</a></li>
             </ul>
         </div>
         <div class="menu">
@@ -90,4 +148,6 @@
         <a href="http://www.allbuttonspressed.com/projects/allbuttonspressed">All Buttons Pressed</a>
     </address>
 </footer>
+
+
 {% endblock %}
